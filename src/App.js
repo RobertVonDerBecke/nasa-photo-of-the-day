@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Img from "./Img";
+import Info from "./info";
 import { BASE_URL, API_KEY } from "./constants/index.js";
 import "./App.css";
 
@@ -30,6 +31,7 @@ function App() {
 	return (
 		<div className="App">
 			<Img nasaData={nasaData} />
+      <Info nasaData={nasaData} />
 			{/* <p>
         Read through the instructions in the README.md file to build your NASA
         app! Have fun <span role="img" aria-label='go!'>🚀</span>!

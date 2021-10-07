@@ -8,8 +8,8 @@ export default function Img(props) {
 			<h2>{nasaData.title}</h2>
 			<img src={nasaData.url} alt="sup"></img>
             <br/>
-			<input type="date" id="selectDate" />
-			<p>{nasaData.explanation}</p>
+            <label for='selectDate'>Select a date to display the Picture taken on that day! </label>
+			<input type="date" id="selectDate" name="selectDate" />
 		</div>
 	);
 }
