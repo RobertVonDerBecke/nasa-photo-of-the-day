@@ -8,24 +8,15 @@ function App() {
   const [nasaData, getNasaData ] = useState([])
 
   useEffect(() => {
-    axios.get(`${BASE_URL}`).then(resp => {
-      console.log(resp.data);
+    axios.get(`${BASE_URL}`)
+    .then(resp => {
       getNasaData(resp.data)
-    }).catch((err) => {
+      console.log(resp.data)
+    }).catch(err => {
       console.error(err);
     })
   }, [])
-  function Img(props){
-    const { nasaData } = props;
-    console.log(nasaData.url)
-    return(
-      <div className='container'>
-      <h2>Nasa pic of the day</h2>
-      <img src={nasaData.url} alt="sup"></img>
-      
-    </div>
-    )
-  }
+
   // if (!props.photoOfTheDay) return <h3>Loading...</h3>;
   return (
     <div className="App">

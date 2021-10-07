@@ -5,8 +5,9 @@ export default function Img(props){
     console.log(nasaData.url)
     return(
       <div className='container'>
-      <h2>Nasa pic of the day</h2>
+      <h2>{nasaData.title}</h2>
       <img src={nasaData.url} alt="sup"></img>
+      <p>{nasaData.explanation}</p>
       
     </div>
     )
