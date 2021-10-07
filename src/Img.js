@@ -7,6 +7,7 @@ export default function Img(props) {
 		<div className="container">
 			<h2>{nasaData.title}</h2>
 			<img src={nasaData.url} alt="sup"></img>
+            <br/>
 			<input type="date" id="selectDate" />
 			<p>{nasaData.explanation}</p>
 		</div>

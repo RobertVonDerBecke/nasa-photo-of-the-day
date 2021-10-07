@@ -6,7 +6,7 @@ import "./App.css";
 
 function App() {
 	const [nasaData, getNasaData] = useState([]);
-	const [date, setDate] = useState('2012-03-14');
+	const [date, setDate] = useState([nasaData.date]);
 
   useEffect(()=> {
     const e = document.querySelector('#selectDate')
