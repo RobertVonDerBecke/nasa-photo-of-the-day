@@ -2,9 +2,14 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Img from "./Img";
 import Info from "./info";
+import styled, { keyframes } from 'styled-components';
 import { BASE_URL, API_KEY } from "./constants/index.js";
 import "./App.css";
 
+const StyledApp = styled.div`
+display: flex;
+margin: 2%;
+`
 function App() {
 	const [nasaData, getNasaData] = useState([]);
 	const [date, setDate] = useState([nasaData.date]);
@@ -15,6 +20,7 @@ function App() {
       console.log(e.value)
       setDate(e.value)
     })
+	
   },[])
 	useEffect(() => {
 		axios
@@ -29,14 +35,10 @@ function App() {
 
 	// if (!props.photoOfTheDay) return <h3>Loading...</h3>;
 	return (
-		<div className="App">
-			<Img nasaData={nasaData} />
-      <Info nasaData={nasaData} />
-			{/* <p>
-        Read through the instructions in the README.md file to build your NASA
-        app! Have fun <span role="img" aria-label='go!'>🚀</span>!
-      </p> */}
-		</div>
+		<StyledApp>
+			<Img nasaData={nasaData} className='something'/>
+      		<Info nasaData={nasaData} />
+		</StyledApp>
 	);
 }
 
