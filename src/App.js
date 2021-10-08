@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Component } from "react";
+import { Container, Jumbotron, Row, Col } from 'reactstrap'
 import axios from "axios";
 import Img from "./Img";
 import Info from "./info";
@@ -7,7 +8,8 @@ import { BASE_URL, API_KEY } from "./constants/index.js";
 import "./App.css";
 
 const StyledApp = styled.div`
-display: flex;
+align-items: center;
+
 margin: 2%;
 `
 function App() {
@@ -36,8 +38,12 @@ function App() {
 	// if (!props.photoOfTheDay) return <h3>Loading...</h3>;
 	return (
 		<StyledApp>
-			<Img nasaData={nasaData} className='something'/>
-      		<Info nasaData={nasaData} />
+			<Container>
+				<Row>
+						<Img nasaData={nasaData} />
+						<Info nasaData={nasaData} />
+				</Row>
+			</Container>
 		</StyledApp>
 	);
 }
